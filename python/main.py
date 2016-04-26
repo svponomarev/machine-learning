@@ -63,12 +63,12 @@ eps = 1e-5 # eps - минимальная разность в функции с�
 max_steps = 1000 # max_steps - максимальное число итераций градиентного спуска
 
 neuron_1 = linn.create_linear_neuron(n)
-print("Equation before learning: y = %.2f*x + %.2f" % (neuron_1.w[0], neuron_1.w[1]))
+print("Equation before learning: y = %.2f*x + %.2f" % (neuron_1.w[1], neuron_1.w[0]))
 print("Cost function before learning: %.2f" % neuron_1.cost_function(neuron_1, X, y))
 
 print("Is gradient descent converge =", neuron_1.GD(X, y, batch_size, learning_rate, eps, max_steps))
 
-print("Equation after learning: y = %.2f*x + %.2f" % (neuron_1.w[0], neuron_1.w[1]))
+print("Equation after learning: y = %.2f*x + %.2f" % (neuron_1.w[1], neuron_1.w[0]))
 print("Cost function after learning: %.2f" % neuron_1.cost_function(neuron_1, X, y))
 
 plot_line(neuron_1.w, "black", "Linear regression", "-")

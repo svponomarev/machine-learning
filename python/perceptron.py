@@ -33,7 +33,7 @@ class Perceptron:
         Расчет вектора ответов перцептрона при предъявлении набора примеров
         input_matrix - матрица размерностью (m, n + 1), где m - число наблюдений,
         n - число признаков
-        Метод возвращает вектор ответов перцептрона (True/False) размерностью (n, 1)
+        Метод возвращает вектор ответов перцептрона (True/False) размерностью (m, 1)
         """
         result = np.dot(input_matrix, self.w)
         result = (result > 0)   
@@ -67,6 +67,7 @@ class Perceptron:
             errors = 0
             for example, answer in zip(input_matrix, y):
                 example = example.reshape((example.size, 1))
+                print(example)
                 error = self.train_on_single_example(example, answer)
                 errors += int(error)
         if errors == 0:
